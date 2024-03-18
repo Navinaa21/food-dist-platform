@@ -1,0 +1,196 @@
+html {
+    font-family: "Montserrat", sans-serif;
+  }
+  body {
+    background: #eee;
+  }
+  .home-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+  }
+  
+  .menu {
+    position: relative;
+    display: inline-block;
+    padding-top: 20px;
+  }
+  
+  .menu-btn {
+    background-color: #eee;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position:absolute;
+    top: 70%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #99ef7e;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeIn 0.4s ease-in-out forwards;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .menu-item {
+    border: none;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    background-color: #99ef7e;
+    color: #fff;
+  }
+  
+  .buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .log-btn, .sig-btn{
+    background-color: white;
+    height: 40px;
+    border-radius: 0.3cm;
+    border-color: #99ef7e;
+    font-variant-caps: all-small-caps;
+    font-size:  15px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+  
+  }
+  .log-btn:hover,.sig-btn:hover {
+    background-color: #99ef7e;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .tit{
+    font-size: medium;
+  }
+  .tit img{
+    height: 0.7cm;
+    width: 0.9cm;
+    margin-right: 5px;  
+  }
+  .footer1{
+    clear: both;
+    position:relative;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2cm;
+    left: 0%;
+    padding-top: 2cm;
+  }
+  .footer h3{
+    padding-top: 0.5cm;
+  }
+
+.sig-area{
+  text-align: center;
+  padding-top: 1cm;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+.sig-area input{
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size:large;
+  margin-top: 30px;
+  align-items: center;
+  background-color: #eaeaea;
+  border-radius: 6px;
+  height:40px ;
+  width: 300px;
+  font-family:'Times New Roman', Times, serif;
+}
+.sig-area button{
+  background-color: #16db8c;
+  border: none;
+  height: 1cm;
+  width: 3cm;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1cm;
+  opacity: 1;
+  
+  transition: 0.2s;
+}
+input::placeholder {
+  padding-left: 0.5cm;
+}
+.sig-area button:hover {
+  opacity: 0.7
+}
+.sig-area .ye{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+/* Style for the container div */
+.drop {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the select element */
+.drop select {
+  width: 200px; /* Set your preferred width */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Style for the arrow icon */
+.drop select::after {
+  content: '\25BC'; /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Style for the options within the dropdown */
+.drop select option {
+  font-size: 16px;
+}
+
+/* Style when the dropdown is open */
+.drop select:focus {
+  outline: none;
+  border-color: #007bff; /* Change to your preferred focus color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Change to your preferred shadow */
+}
+
+
+
+
+  /*.sig-area img{
+    height: 1cm;
+    width: 1cm;
+    padding-top: 1.5cm;
+    display: block;
+    margin: 0 auto;
+  }*/

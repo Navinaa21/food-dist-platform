@@ -1,0 +1,152 @@
+html {
+    font-family: "Montserrat", sans-serif;
+    
+  }
+  body {
+    background: #eee;
+  }
+  .home-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+  }
+  
+  .menu {
+    position: relative;
+    display: inline-block;
+    padding-top: 20px;
+  }
+  
+  .menu-btn {
+    background-color: #eee;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position:absolute;
+    top: 70%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #99ef7e;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeIn 0.4s ease-in-out forwards;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .menu-item {
+    padding: 10px 15px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    background-color: #99ef7e;
+    color: #fff;
+  }
+  
+  .buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .log-btn, .sig-btn{
+    background-color: white;
+    height: 40px;
+    border-radius: 0.3cm;
+    border-color: #99ef7e;
+    font-variant-caps: all-small-caps;
+    font-size:  15px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+  
+  }
+  .log-btn:hover,.sig-btn:hover {
+    background-color: #99ef7e;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .tit{
+    font-size: medium;
+  }
+  .tit img{
+    height: 0.7cm;
+    width: 0.9cm;
+    margin-right: 5px;  
+  }
+  .footer{
+    clear: both;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2cm;
+    left: 0%;
+  }
+  .footer h3{
+    padding-top: 0.5cm;
+  }
+  .body-content1 {
+    margin-bottom: 2cm; /* Adjust this value to match the height of your footer */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+
+
+.card-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: block;
+}
+
+.body-content {
+  padding: 20px;
+}
+
+.input-box {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+.add-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
