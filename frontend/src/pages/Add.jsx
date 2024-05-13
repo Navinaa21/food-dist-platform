@@ -12,7 +12,7 @@ function Add() {
     };
     const year = new Date().getFullYear();
     useEffect(() => {
-        axios.get('http://localhost:8081/Add')
+        axios.get('https://food-dist-platform.onrender.com/Add')
             .then(res => {
                 if (res.data.valid) {
                     console.log('success');
@@ -29,7 +29,7 @@ function Add() {
     axios.defaults.withCredentials=true;
 
       const handleLogout = () => {
-        axios.get('http://localhost:8081/logout')
+        axios.get('https://food-dist-platform.onrender.com/logout')
             .then(() => {
                 navigate('/login');
             })
@@ -90,7 +90,7 @@ function Add() {
     
 
     useEffect(() => {
-        axios.get('http://localhost:8081/getData')
+        axios.get('https://food-dist-platform.onrender.com/getData')
             .then(res => {
                 if (res.data.success) {
                     setData(res.data.data);
@@ -107,7 +107,7 @@ function Add() {
 
     const handleDelete = (foodName) => {
         console.log(foodName)
-        axios.delete(`http://localhost:8081/Delete/${foodName}`)
+        axios.delete(`https://food-dist-platform.onrender.com/Delete/${foodName}`)
           .then(res => {
             window.location.reload();
             console.log('Item deleted successfully');
