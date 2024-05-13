@@ -20,7 +20,7 @@ function View() {
 
     const navigate=useNavigate();
     useEffect(()=>{
-        axios.get('http://localhost:8081/View')
+        axios.get('https://food-dist-platform.onrender.com/View')
         .then(res=>{
             if(res.data.valid){
                 console.log('success');
@@ -33,7 +33,7 @@ function View() {
 
 
     const handleLogout = () => {
-        axios.get('http://localhost:8081/logout')
+        axios.get('https://food-dist-platform.onrender.com/logout')
         .then(() => {
                 navigate('/login');
         })
@@ -54,7 +54,7 @@ function View() {
 
     const [data,setData]=useState([]);
     useEffect(() => {
-        axios.get('http://localhost:8081/fetchata')
+        axios.get('https://food-dist-platform.onrender.com/fetchata')
         .then(res => {
                 if (res.data.success) {
                     setData(res.data.data);
@@ -71,7 +71,7 @@ function View() {
     const handlebuy = (foodName, email) => {
         console.log(foodName);
       
-        axios.delete(`http://localhost:8081/Buy/${foodName}?email=${email}`)
+        axios.delete(`https://food-dist-platform.onrender.com/Buy/${foodName}?email=${email}`)
           .then(res => {
             console.log('Item deleted successfully');
             toast.success("Success Notification !");
