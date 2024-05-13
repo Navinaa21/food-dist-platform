@@ -19,7 +19,7 @@ function Signup() {
         setErrors(Vaalidation(values));
         if(errors.email==="" && errors.password===""){
             console.log('Submit button clicked', values);
-            axios.post('http://localhost:8081/signup', values)
+            axios.post('https://food-dist-platform.onrender.com/signup', values)
            
             .then(res=> {
                 navigate('/login');
