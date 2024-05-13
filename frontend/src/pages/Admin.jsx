@@ -18,7 +18,7 @@ function Admin() {
 
     const navigate=useNavigate();
     useEffect(()=>{
-        axios.get('http://localhost:8081/Admin')
+        axios.get('https://food-dist-platform.onrender.com/Admin')
         .then(res=>{
             if(res.data.valid){
                 console.log('success');
@@ -31,7 +31,7 @@ function Admin() {
 
 
     const handleLogout = () => {
-        axios.get('http://localhost:8081/logout')
+        axios.get('https://food-dist-platform.onrender.com/logout')
         .then(() => {
             navigate('/login');
         })
@@ -52,7 +52,7 @@ function Admin() {
 
     const [data,setData]=useState([]);
     useEffect(() => {
-        axios.get('http://localhost:8081/fetchata')
+        axios.get('https://food-dist-platform.onrender.com/fetchata')
         .then(res => {
                 if (res.data.success) {
                     setData(res.data.data);
@@ -68,7 +68,7 @@ function Admin() {
 
     const handlebuy = (foodName, email) => {
         console.log(foodName)
-        axios.delete(`http://localhost:8081/Buy/${foodName}?email=${email}`)
+        axios.delete(`https://food-dist-platform.onrender.com/Buy/${foodName}?email=${email}`)
         .then(res => {
             window.location.reload();
             
