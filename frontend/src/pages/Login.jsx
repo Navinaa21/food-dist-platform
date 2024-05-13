@@ -40,7 +40,7 @@ function Login() {
     }
     axios.defaults.withCredentials=true;
     useEffect(()=>{
-        axios.get('http://localhost:8081/View')
+        axios.get('https://food-dist-platform.onrender.com/View')
         .then(res=>{
             if(res.data.valid){
                 navigate('/View')
@@ -51,7 +51,7 @@ function Login() {
         .catch(err=> console.log(err))
     },[navigate])
     useEffect(()=>{
-        axios.get('http://localhost:8081/Add')
+        axios.get('https://food-dist-platform.onrender.com/Add')
         .then(res=>{
             if(res.data.valid){
                 navigate('/Add');
@@ -64,7 +64,7 @@ function Login() {
 
 
     useEffect(()=>{
-        axios.get('http://localhost:8081/Admin')
+        axios.get('https://food-dist-platform.onrender.com/Admin')
         .then(res=>{
             if(res.data.valid){
                 navigate('/Admin');
