@@ -12,10 +12,9 @@ function Login() {
     const navigate=useNavigate();
     const handleSubmit=(event)=>{
         event.preventDefault();
-        setErrors(Validation(values));
         if(values.email && values.password && Object.keys(errors).length === 0){
             console.log('Submit button clicked', values);
-            axios.post('https://food-dist-platform.vercel.app/login', values)
+            axios.post('https://food-dist-platform.onrender.com/login', values)
             .then(res=> {
                 console.log(res.data.role);
                 if (res.data.login ){
