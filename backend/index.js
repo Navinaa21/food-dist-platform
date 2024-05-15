@@ -75,6 +75,7 @@ db.connect((err) => {
 
 
 app.get('/View',(req,res)=>{
+    console.log(req.session.role);
     if(req.session.role==='Buyer'){
         return res.json({valid:true,role:req.session.role})
     }else{
