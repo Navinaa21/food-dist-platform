@@ -12,12 +12,30 @@ function Vaalidation(values){
     if(values.password===""){
         error.password="Password should not be empty"
     }
-    else if(!password_pattern.test(values.password)){
-        error.password="Password didn't match"
-
-    }
     else{
         error.password=""
+        if (!/\d/.test(values.password)) {
+            error.password += "Password must contain at least one digit. ";
+        }
+
+        if (!/[a-z]/.test(values.password)) {
+            error.password += "Password must contain at least one lowercase letter. ";
+        }
+
+        if (!/[A-Z]/.test(values.password)) {
+            error.password += "Password must contain at least one uppercase letter. ";
+        }
+
+        if (!/^[a-zA-Z0-9]+$/.test(values.password)) {
+            error.password += "Password can only contain alphanumeric characters. ";
+        }
+
+        if (values.password.length < 8) {
+            error.password += "Password must be at least 8 characters long. ";
+        }
+
+        // Removing extra whitespace from the end
+        error.password = error.password.trim();
     }
     return error;
 
