@@ -15,7 +15,7 @@ function Login() {
         setErrors(Validation(values));
         if(values.email && values.password && Object.keys(errors).length === 0){
             console.log('Submit button clicked', values);
-            axios.post('http://localhost:8081/login', values)
+            axios.post('https://food-dist-platform.vercel.app/login', values)
             .then(res=> {
                 console.log(res.data.role);
                 if (res.data.login ){
