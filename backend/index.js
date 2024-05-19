@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(cors({
-    origin:["http://localhost:3000", "https://food-dist-platform.vercel.app"],
+    origin:["https://food-dist-platform.vercel.app"],
     methods:["POST","GET","DELETE"],
     credentials:true
 
@@ -52,7 +52,6 @@ app.use(session({
     saveUninitialized:false,
     cookie:{
         secure:false,
-        sameSite: 'none',
         maxAge:1000*60*60*24
     }
 }))
