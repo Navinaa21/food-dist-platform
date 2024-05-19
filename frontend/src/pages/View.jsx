@@ -121,7 +121,7 @@ function View() {
 
                     <FoodCard
                     key={i}
-                    image={`http://localhost:8081/images/`+d.image}
+                    image={`https://food-dist-platform.onrender.com/images/`+d.image}
                     foodName={d.foodname}
                     donorName={d.donor}
                     contact={d.contact}
