@@ -40,7 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors({
     origin:["https://food-dist-platform.vercel.app"],
-    exposedHeaders: 'Set-Cookie',
     methods:["POST","GET","DELETE"],
     credentials:true
 
