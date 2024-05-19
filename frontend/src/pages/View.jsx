@@ -20,7 +20,7 @@ function View() {
 
     const navigate=useNavigate();
     useEffect(()=>{
-        axios.get('https://food-dist-platform.onrender.com/View')
+        axios.get('https://food-dist-platform.onrender.com/View', { withCredentials: true })
         .then(res=>{
             if(res.data.valid){
                 console.log('success');
@@ -54,7 +54,7 @@ function View() {
 
     const [data,setData]=useState([]);
     useEffect(() => {
-        axios.get('https://food-dist-platform.onrender.com/fetchata')
+        axios.get('https://food-dist-platform.onrender.com/fetchata', { withCredentials: true })
         .then(res => {
                 if (res.data.success) {
                     setData(res.data.data);
