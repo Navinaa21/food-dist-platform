@@ -17,6 +17,7 @@ function Login() {
             axios.post('https://food-dist-platform.onrender.com/login', values)
             .then(res=> {
                 console.log(res.data.role);
+                console.log(res.data.session);
                 if (res.data.login ){
                     if (res.data.role === 'Buyer') {
                         navigate('/View');
