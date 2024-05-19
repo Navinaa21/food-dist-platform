@@ -140,7 +140,7 @@ app.get('/getData', (req, res) => {
 
 app.get('/fetchata', (req, res) => {
     if (req.session.role === 'Buyer' || req.session.role === 'Admin') {
-        
+        console.log('Session data:', req.session);
         const fetchDataSql = "SELECT * FROM food_details";
         db.query(fetchDataSql, (err, data) => {
             if (err) {
