@@ -152,7 +152,7 @@ app.get('/fetchata', (req, res) => {
             }
         });
     } else {
-        res.json({ success: false, error: 'Unauthorized access' });
+        res.json({ success: false, error: req.session.role });
     }
 });
 
