@@ -22,6 +22,7 @@ function Add() {
     //         })
     //         .catch(err => console.log(err));
     // });
+    const [data,setData]=useState([]);
     useEffect(() => {
         const role = localStorage.getItem('role');
         axios.get('https://food-dist-platform.onrender.com/getData',{ params: { role } })
@@ -98,24 +99,7 @@ function Add() {
     
     
     
-    const [data,setData]=useState([]);
     
-
-    useEffect(() => {
-        axios.get('https://food-dist-platform.onrender.com/getData')
-            .then(res => {
-                if (res.data.success) {
-                    setData(res.data.data);
-                } else {
-                    console.log(res.data.error);
-                    // Handle unauthorized access or other errors
-                }
-            })
-            .catch(err => console.log(err));
-    }, []);
-    
-
-
 
     const handleDelete = (foodName) => {
         console.log(foodName)
