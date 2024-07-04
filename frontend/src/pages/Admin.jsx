@@ -81,7 +81,7 @@ function Admin() {
     const handlebuy = (foodName, email) => {
         const role = localStorage.getItem('role');
         console.log(foodName)
-        axios.delete(`http://localhost:8081/Buy/${foodName}?email=${email}`,{ params: { role } })
+        axios.delete(`https://food-dist-platform.onrender.com/Buy/${foodName}?email=${email}`,{ params: { role } })
         .then(res => {
             window.location.reload();
             
