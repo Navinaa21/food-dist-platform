@@ -74,14 +74,14 @@ db.connect((err) => {
   });
 
 
-app.get('/View',(req,res)=>{
-    console.log(req.session.role);
-    if(req.session.role==='Buyer'){
-        return res.json({valid:true,role:req.session.role})
-    }else{
-        return res.json({valid:false})
-    }
-})
+// app.get('/View',(req,res)=>{
+//     console.log(req.session.role);
+//     if(req.session.role==='Buyer'){
+//         return res.json({valid:true,role:req.session.role})
+//     }else{
+//         return res.json({valid:false})
+//     }
+// })
 
 app.get('/Admin',(req,res)=>{
     if(req.session.role==='Admin'){
@@ -91,13 +91,13 @@ app.get('/Admin',(req,res)=>{
     }
 })
 
-app.get('/Add',(req,res)=>{
-    if(req.session.role==='Donor'){
-        return res.json({valid:true,role:req.session.role})
-    }else{
-        return res.json({valid:false})
-    }
-})
+// app.get('/Add',(req,res)=>{
+//     if(req.session.role==='Donor'){
+//         return res.json({valid:true,role:req.session.role})
+//     }else{
+//         return res.json({valid:false})
+//     }
+// })
 
 
 app.get('/logout', (req, res) => {
@@ -116,7 +116,8 @@ app.get('/logout', (req, res) => {
 // Add this endpoint to your existing server-side code
 
 app.get('/getData', (req, res) => {
-    if (req.session.role === 'Donor') {
+    const role = req.query.role;
+    if (role === 'Donor') {
         // Assuming 'email' is the column in your database that stores user emails
         const userEmail = req.session.email;
         
@@ -138,9 +139,12 @@ app.get('/getData', (req, res) => {
 
 
 
+
 app.get('/fetchata', (req, res) => {
-    if (req.session.role === 'Buyer' || req.session.role === 'Admin') {
-        console.log('Session data:', req.session);
+    const role = req.query.role;
+    //const email = req.query.email;
+    if (role === 'Buyer' || role === 'Admin') {
+        
         const fetchDataSql = "SELECT * FROM food_details";
         db.query(fetchDataSql, (err, data) => {
             if (err) {
@@ -148,14 +152,13 @@ app.get('/fetchata', (req, res) => {
                 res.json({ success: false, error: 'Error fetching data' });
             } else {
                 
-                res.json({ success: true, data: data });
+                res.json({ success: true, data: data , sess:req.session});
             }
         });
     } else {
-        res.json({ success: false, error: req.session || 'No role set in session' });
+        res.json({ success: false, error: 'Unauthorized access' });
     }
 });
-
 
 
 
