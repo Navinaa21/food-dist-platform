@@ -70,9 +70,10 @@ function View() {
 
 
     const handlebuy = (foodName, email) => {
+
         console.log(foodName);
-      
-        axios.delete(`https://food-dist-platform.onrender.com/Buy/${foodName}?email=${email}`)
+        const role = localStorage.getItem('role');
+        axios.delete(`https://food-dist-platform.onrender.com/Buy/${foodName}?email=${email}`,{ params: { role } })
           .then(res => {
             console.log('Item deleted successfully');
             toast.success("Success Notification !");
