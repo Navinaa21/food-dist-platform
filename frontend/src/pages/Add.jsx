@@ -105,7 +105,7 @@ function Add() {
         const role = localStorage.getItem('role');
         const email = localStorage.getItem('email');
         console.log(foodName)
-        axios.delete(`http://localhost:8081/Delete/${foodName}`,{ params: { role,email } })
+        axios.delete(`https://food-dist-platform.onrender.com/Delete/${foodName}`,{ params: { role,email } })
           .then(res => {
             window.location.reload();
             console.log('Item deleted successfully');
