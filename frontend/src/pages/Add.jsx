@@ -11,17 +11,29 @@ function Add() {
         setIsMenuOpen(!isMenuOpen);
     };
     const year = new Date().getFullYear();
+    // useEffect(() => {
+    //     axios.get('https://food-dist-platform.onrender.com/Add')
+    //         .then(res => {
+    //             if (res.data.valid) {
+    //                 console.log('success');
+    //             } else {
+    //                 navigate('/login');
+    //             }
+    //         })
+    //         .catch(err => console.log(err));
+    // });
     useEffect(() => {
-        axios.get('https://food-dist-platform.onrender.com/Add')
+        const role = localStorage.getItem('role');
+        axios.get('https://food-dist-platform.onrender.com/getData',{ params: { role } })
             .then(res => {
-                if (res.data.valid) {
-                    console.log('success');
+                if (res.data.success) {
+                    setData(res.data.data);
                 } else {
-                    navigate('/login');
+                    console.log(res.data.error);
                 }
             })
             .catch(err => console.log(err));
-    });
+    }, []);
 
 
     const navigate=useNavigate();
