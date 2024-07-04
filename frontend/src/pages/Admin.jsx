@@ -17,17 +17,17 @@ function Admin() {
 
 
     const navigate=useNavigate();
-    useEffect(()=>{
-        axios.get('https://food-dist-platform.onrender.com/Admin')
-        .then(res=>{
-            if(res.data.valid){
-                console.log('success');
-            }else{
-                navigate('/login')
-            }
-        })
-        .catch(err=> console.log(err))
-      })
+    // useEffect(()=>{
+    //     axios.get('https://food-dist-platform.onrender.com/Admin')
+    //     .then(res=>{
+    //         if(res.data.valid){
+    //             console.log('success');
+    //         }else{
+    //             navigate('/login')
+    //         }
+    //     })
+    //     .catch(err=> console.log(err))
+    //   })
 
 
     const handleLogout = () => {
@@ -51,14 +51,26 @@ function Admin() {
 
 
     const [data,setData]=useState([]);
+    // useEffect(() => {
+    //     axios.get('https://food-dist-platform.onrender.com/fetchata')
+    //     .then(res => {
+    //             if (res.data.success) {
+    //                 setData(res.data.data);
+    //             } else {
+    //                 console.log(res.data.error);
+    //                 // Handle unauthorized access or other errors
+    //             }
+    //     })
+    //     .catch(err => console.log(err));
+    // }, []);
     useEffect(() => {
-        axios.get('https://food-dist-platform.onrender.com/fetchata')
+        const role = localStorage.getItem('role');
+        axios.get('https://food-dist-platform.onrender.com/fetchata',{ params: { role } })
         .then(res => {
                 if (res.data.success) {
                     setData(res.data.data);
                 } else {
                     console.log(res.data.error);
-                    // Handle unauthorized access or other errors
                 }
         })
         .catch(err => console.log(err));
