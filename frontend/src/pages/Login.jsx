@@ -10,6 +10,7 @@ function Login() {
     const [errors, setErrors] = useState({});
     const [values, setValues] = useState({});
     const navigate=useNavigate();
+    axios.defaults.withCredentials=true;
     const handleSubmit=(event)=>{
         event.preventDefault();
         if(values.email && values.password && Object.keys(errors).length === 0){
@@ -19,6 +20,8 @@ function Login() {
                 console.log(res.data.role);
                 console.log(res.data.session);
                 if (res.data.login ){
+                    localStorage.setItem('email', res.data.email);
+                    localStorage.setItem('role', res.data.role);
                     if (res.data.role === 'Buyer') {
                         navigate('/View');
                     } else if (res.data.role === 'Donor') {
@@ -38,43 +41,7 @@ function Login() {
     const handleInput=(event)=>{
         setValues(prev=>({...prev,[event.target.name]: [event.target.value]}));
     }
-    axios.defaults.withCredentials=true;
-    useEffect(()=>{
-        axios.get('https://food-dist-platform.onrender.com/View')
-        .then(res=>{
-            if(res.data.valid){
-                navigate('/View')
-            }else{
-                navigate('/login')
-            }
-        })
-        .catch(err=> console.log(err))
-    },[navigate])
-    useEffect(()=>{
-        axios.get('https://food-dist-platform.onrender.com/Add')
-        .then(res=>{
-            if(res.data.valid){
-                navigate('/Add');
-            }else{
-                navigate('/login');
-            }
-        })
-        .catch(err=> console.log(err))
-    },[navigate])
-
-
-    useEffect(()=>{
-        axios.get('https://food-dist-platform.onrender.com/Admin')
-        .then(res=>{
-            if(res.data.valid){
-                navigate('/Admin');
-            }else{
-                navigate('/login');
-            }
-        })
-        .catch(err=> console.log(err))
-    },[navigate])
-
+    
     const handleReload = () => {
         // Use navigate to reload the current page
         
